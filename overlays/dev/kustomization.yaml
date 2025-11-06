@@ -7,4 +7,4 @@ namePrefix: dev-               # (선택) 리소스 이름 앞에 "dev-" 접두�
 
 images:
   - name: docker.io/kangbock/myapp   # ✅ Jenkins가 이 부분의 newTag 자동 변경
-    newTag: "2"                 # 예: Jenkins가 ${BUILD_NUMBER}로 교체
+    newTag: "3"                 # 예: Jenkins가 ${BUILD_NUMBER}로 교체
