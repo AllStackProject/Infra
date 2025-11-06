@@ -1,0 +1,10 @@
+resources:
+  - ../../base
+
+namespace: cicd                # ✅ 실제 배포될 네임스페이스
+
+namePrefix: dev-               # (선택) 리소스 이름 앞에 "dev-" 접두사 추가
+
+images:
+  - name: docker.io/kangbock/myapp   # ✅ Jenkins가 이 부분의 newTag 자동 변경
+    newTag: "latest"                 # 예: Jenkins가 ${BUILD_NUMBER}로 교체
