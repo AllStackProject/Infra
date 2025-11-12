@@ -4,7 +4,7 @@ metadata:
   name: myapp
   namespace: cicd
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: myapp
@@ -22,13 +22,13 @@ spec:
             httpGet:
               path: /
               port: 8080
-            initialDelaySeconds: 10
+            initialDelaySeconds: 25
             periodSeconds: 10
-            failureThreshold: 3
+            failureThreshold: 6
           livenessProbe:
             httpGet:
               path: /
               port: 8080
-            initialDelaySeconds: 15
-            periodSeconds: 20
-            failureThreshold: 3
+            initialDelaySeconds: 35
+            periodSeconds: 15
+            failureThreshold: 5
