@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: myapp
-        image: docker.io/<YOUR_DOCKERHUB_USERNAME>/<YOUR_IMAGE_NAME>:latest
+        image: docker.io/dockdock150/backend:latest
         ports:
         - containerPort: 8080
