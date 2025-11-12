@@ -14,21 +14,21 @@ spec:
         app: myapp
     spec:
       containers:
-      - name: myapp
-        image: docker.io/dockdock150/backend:latest
-        ports:
-        - containerPort: 8080
-    readinessProbe:
-          httpGet:
-            path: /
-            port: 8080
-          initialDelaySeconds: 10    # 컨테이너 시작 후 10초 뒤부터 체크
-          periodSeconds: 10          # 10초마다 체크
-          failureThreshold: 3        # 3번 실패 시 "NotReady"
-        livenessProbe:
-          httpGet:
-            path: /
-            port: 8080
-          initialDelaySeconds: 15    # 15초 뒤부터 헬스체크 시작
-          periodSeconds: 20          # 20초마다 체크
-          failureThreshold: 3
+        - name: myapp
+          image: docker.io/dockdock150/backend:latest
+          ports:
+            - containerPort: 8080
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 8080
+            initialDelaySeconds: 10
+            periodSeconds: 10
+            failureThreshold: 3
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 8080
+            initialDelaySeconds: 15
+            periodSeconds: 20
+            failureThreshold: 3
