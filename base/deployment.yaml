@@ -5,6 +5,7 @@ metadata:
   namespace: cicd
 spec:
   replicas: 1
+  revisionHistoryLimit: 3
   selector:
     matchLabels:
       app: myapp
@@ -26,20 +27,16 @@ spec:
           image: docker.io/dockdock150/backend:latest
           ports:
             - containerPort: 8080
-
-          # ✅ Readiness Probe
+            
           readinessProbe:
-            httpGet:
-              path: /
+            tcpSocket:
               port: 8080
             initialDelaySeconds: 25
             periodSeconds: 10
             failureThreshold: 6
 
-          # ✅ Liveness Probe
           livenessProbe:
-            httpGet:
-              path: /
+            tcpSocket:
               port: 8080
             initialDelaySeconds: 35
             periodSeconds: 15
