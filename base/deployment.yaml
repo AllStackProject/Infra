@@ -18,7 +18,7 @@ spec:
       tolerations:
         - key: "dedicated"
           operator: "Equal"
-          value: "true"
+          value: "cicd"
           effect: "NoSchedule"
 
       containers:
