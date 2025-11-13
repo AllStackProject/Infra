@@ -14,7 +14,7 @@ spec:
         app: myapp
     spec:
       nodeSelector:
-        cicd: "true"
+        argocd-node: "true"
       tolerations:
         - key: "dedicated"
           operator: "Equal"
