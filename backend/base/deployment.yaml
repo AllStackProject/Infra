@@ -27,7 +27,13 @@ spec:
           image: docker.io/dockdock150/backend:latest
           ports:
             - containerPort: 8080
-            
+
+          envFrom:
+            - configMapRef:
+                name: myapp-config
+            - secretRef:
+                name: myapp-secret
+          
           readinessProbe:
             tcpSocket:
               port: 8080
