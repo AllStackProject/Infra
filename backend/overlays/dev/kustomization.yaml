@@ -1,7 +1,7 @@
 resources:
   - ../../base
   - myapp-config.yaml
-  - myapp-sealedsecret.yaml
+ 
 
 namespace: cicd                # ✅ 실제 배포될 네임스페이스
 
