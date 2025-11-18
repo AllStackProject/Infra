@@ -1,1 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: privideo-frontend
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: privideo-frontend
+  template:
+    metadata:
+      labels:
+        app: privideo-frontend
+    spec:
+      nodeSelector:
+        argocd-node: "true"  # 같은 노드에 배포하려면
+      tolerations:
+        - key: "dedicated"
+          operator: "Equal"
+          value: "cicd"
+          effect: "NoSchedule"
+      
+      containers:
+        - name: frontend
+          image: docker.io/dockdock150/frontend:latest 
+          ports:
+            - containerPort: 80  # nginx 포트   
 
+          # Health Check
+          readinessProbe:
+            httpGet:
+              path: 
+              port: 80
+            initialDelaySeconds: 5 
+            periodSeconds: 10
+            failureThreshold: 3
+          
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 80
+            initialDelaySeconds: 10
+            periodSeconds: 15
+            failureThreshold: 3
+          
+          resources:
+            requests:
+              memory: "64Mi"   
+              cpu: "50m"
+            limits:
+              memory: "128Mi"
+              cpu: "100m"
+      
