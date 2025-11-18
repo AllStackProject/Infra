@@ -9,4 +9,4 @@ namePrefix: dev-               # (선택) 리소스 이름 앞에 "dev-" 접두�
 
 images:
   - name: docker.io/dockdock150/backend   # 도커 허브의 실제 이미지 경로
-    newTag: "32"
+    newTag: "33"
