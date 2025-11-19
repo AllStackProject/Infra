@@ -14,7 +14,7 @@ spec:
         pathType: ImplementationSpecific
         backend:
           service:
-            name: backend-service
+            name: dev-privideo-backend-service
             port:
               number: 8080
       # Frontend
