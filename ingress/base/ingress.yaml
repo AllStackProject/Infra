@@ -1,1 +1,16 @@
-
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: backend-ingress
+spec:
+  ingressClassName: nginx
+  rules:
+    - http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: privideo-backend-service   # backend ClusterIP 이름
+                port:
+                  number: 8080        # backend port
