@@ -8,4 +8,4 @@ namespace: cicd
 
 images:
   - name: docker.io/dockdock150/frontend
-    newTag: "8"
+    newTag: "9"
