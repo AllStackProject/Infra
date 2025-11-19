@@ -3,3 +3,7 @@ kind: Kustomization
 
 resources:
   - ingress.yaml
+  
+commonLabels:
+  app.kubernetes.io/name: privideo
+  app.kubernetes.io/component: ingress
