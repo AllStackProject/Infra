@@ -8,4 +8,4 @@ namespace: cicd
 
 images:
   - name: docker.io/dockdock150/frontend
-    newTag: "latest"  # Jenkins가 업데이트
+    newTag: "4"
