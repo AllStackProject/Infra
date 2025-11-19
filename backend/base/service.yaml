@@ -4,11 +4,10 @@ metadata:
   name: myapp-service
   namespace: cicd
 spec:
-  type: NodePort
+  type: ClusterIP
   selector:
     app: myapp     # 파드 라벨과 정확히 일치해야 함
   ports:
     - name: http
-      port: 8080        # Service 내부 포트
-      targetPort: 8080  # Spring Boot가 LISTEN 하는 포트
-      nodePort: 30120   # 외부에서 접속하는 포트(임의로 선택)
+      port: 8080       # 외부에서 접근할 포트 (cluster 내부에서 사용)
+      targetPort: 8080 # Pod 컨테이너 포트
