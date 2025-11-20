@@ -16,3 +16,20 @@ spec:
             name: dev-privideo-backend-service
             port:
               number: 8080
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: privideo-frontend-ingress
+spec:
+  ingressClassName: nginx
+  rules:
+  - http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: privideo-frontend-service
+            port:
+              number: 80
