@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: myapp
+  name: privideo-backend
   namespace: cicd
 spec:
   replicas: 1
   revisionHistoryLimit: 3
   selector:
     matchLabels:
-      app: myapp
+      app: privideo-backend
   template:
     metadata:
       labels:
-        app: myapp
+        app: privideo-backend
     spec:
       nodeSelector:
         argocd-node: "true"
@@ -23,7 +23,7 @@ spec:
           effect: "NoSchedule"
 
       containers:
-        - name: myapp
+        - name: backend
           image: docker.io/dockdock150/backend:latest
           ports:
             - containerPort: 8080
