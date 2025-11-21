@@ -16,4 +16,9 @@ data:
   REDIS_MIN_IDLE: "2"
   REDIS_TIMEOUT: "3000"
 
+  AWS_REGION: "ap-northeast-2"
+  AWS_ORIGINAL_BUCKET: "privideo-original"
+  AWS_IMG_BUCKET: "privideo-image"
+  AWS_UPLOAD_EXPIRATION: "60m"
+
   TOKEN_EXPIRED_IN: "3600"
