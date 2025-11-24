@@ -2,12 +2,14 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: privideo-backend-ingress
+  namespace: cicd
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /$2
 spec:
   ingressClassName: nginx
   rules:
-  - http:
+  - host: www.privideo.cloud
+    http:
       paths:
       - path: /api(/|$)(.*)
         pathType: ImplementationSpecific
@@ -21,10 +23,12 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: privideo-frontend-ingress
+  namespace: cicd
 spec:
   ingressClassName: nginx
   rules:
-  - http:
+  - host: www.privideo.cloud
+    http:
       paths:
       - path: /
         pathType: Prefix
