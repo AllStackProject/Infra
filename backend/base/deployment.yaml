@@ -21,12 +21,13 @@ spec:
           operator: "Equal"
           value: "cicd"
           effect: "NoSchedule"
-      
-      volume:
+
+  
+      volumes:
         - name: gemini-secret
           secret:
-            secretName: gemini-service
-      
+            secretName: gemini-service   # ← 실제 존재하는 secret 이름과 동일해야 함
+
       containers:
         - name: backend
           image: docker.io/dockdock150/backend:latest
@@ -38,11 +39,12 @@ spec:
                 name: myapp-config
             - secretRef:
                 name: myapp-secret
+
           volumeMounts:
             - name: gemini-secret
-              mountPath: /var/secrets/google   # Pod 내부 경로
+              mountPath: /var/secrets/google
               readOnly: true
-        
+
           readinessProbe:
             tcpSocket:
               port: 8080
