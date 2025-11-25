@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: privideo-backend
-  namespace: cicd
+  namespace: web
 spec:
   replicas: 1
   revisionHistoryLimit: 3
@@ -14,15 +14,6 @@ spec:
       labels:
         app: privideo-backend
     spec:
-      nodeSelector:
-        argocd-node: "true"
-      tolerations:
-        - key: "dedicated"
-          operator: "Equal"
-          value: "cicd"
-          effect: "NoSchedule"
-
-  
       volumes:
         - name: gemini-secret
           secret:
