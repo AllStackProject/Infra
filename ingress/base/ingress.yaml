@@ -2,7 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: privideo-backend-ingress
-  namespace: cicd
+  namespace: web
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /$2
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
@@ -33,7 +33,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: privideo-frontend-ingress
-  namespace: cicd
+  namespace: web
   annotations:
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
 spec:
