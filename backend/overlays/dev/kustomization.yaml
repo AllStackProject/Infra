@@ -3,7 +3,7 @@ resources:
   - myapp-config.yaml
  
 
-namespace: cicd                # ✅ 실제 배포될 네임스페이스
+namespace: web                # ✅ 실제 배포될 네임스페이스
 
 
 images:
