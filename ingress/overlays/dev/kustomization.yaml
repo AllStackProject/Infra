@@ -4,4 +4,4 @@ kind: Kustomization
 resources:
   - ../../base/
 
-namespace: cicd
+namespace: web
