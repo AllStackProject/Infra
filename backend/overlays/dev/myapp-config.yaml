@@ -8,9 +8,9 @@ data:
 
   DATASOURCE_URL: "jdbc:postgresql://172.16.2.110:5000/postgres"
   
-  REDIS_HOST: "redis"
-  REDIS_PORT: "26379"
-  REDIS_MASTER: mymaster
+  REDIS_SENTINEL_HOST: "redis"
+  REDIS_SENTINEL_PORT: "26379"
+  REDIS_SENTINEL_MASTER: "mymaster"
   REDIS_ACTIVE: "10"
   REDIS_MAX_IDLE: "10"
   REDIS_MIN_IDLE: "2"
@@ -19,6 +19,19 @@ data:
   AWS_REGION: "ap-northeast-2"
   AWS_ORIGINAL_BUCKET: "privideo-original"
   AWS_IMG_BUCKET: "privideo-image"
+  AWS_OUTPUT_BUCKET: "privideo-output"
   AWS_UPLOAD_EXPIRATION: "60m"
+  
+  COOKIE_DOMAIN: ".privideo.cloud"
+  CDN_BASE_URL: "stream.privideo.cloud"
 
-  TOKEN_EXPIRED_IN: "3600"
+  GOOGLE_CLOUD_PROJECT_ID: "gen-lang-client-0041043724"
+  GOOGLE_CLOUD_LOCATION: "us-central1"
+  GEMINI_MODEL_NAME: "gemini-2.0-flash"
+
+  RTRZ_BASE_URL: "https://openapi.vito.ai"
+  RTRZ_CLIENT_ID: "bSV7tYg1y9B5QISrUKJ3"
+  
+  TOKEN_EXPIRED_IN: "2592000"
+
+  CF_COOKIE_TTL: "7200"
