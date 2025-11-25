@@ -8,4 +8,4 @@ namespace: web                # ✅ 실제 배포될 네임스페이스
 
 images:
   - name: docker.io/dockdock150/backend   # 도커 허브의 실제 이미지 경로
-    newTag: "18"
+    newTag: "19"
