@@ -4,7 +4,7 @@ kind: Kustomization
 resources:
   - ../../base
 
-namespace: cicd 
+namespace: web 
 
 images:
   - name: docker.io/dockdock150/frontend
