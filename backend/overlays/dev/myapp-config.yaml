@@ -29,8 +29,8 @@ data:
   GOOGLE_CLOUD_LOCATION: "us-central1"
   GEMINI_MODEL_NAME: "gemini-2.0-flash"
 
-  RTRZ_BASE_URL: "https://openapi.vito.ai"
-  RTRZ_CLIENT_ID: "bSV7tYg1y9B5QISrUKJ3"
+  RTZR_BASE_URL: "https://openapi.vito.ai"
+  RTZR_CLIENT_ID: "bSV7tYg1y9B5QISrUKJ3"
   
   TOKEN_EXPIRED_IN: "2592000"
 
