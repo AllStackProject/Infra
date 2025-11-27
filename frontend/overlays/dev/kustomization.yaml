@@ -8,4 +8,4 @@ namespace: web
 
 images:
   - name: docker.io/dockdock150/frontend
-    newTag: "14"
+    newTag: "15"
