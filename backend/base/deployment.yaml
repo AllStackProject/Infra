@@ -10,17 +10,18 @@ spec:
     matchLabels:
       app: privideo-backend
   template:
-    nodeSelector:
+    metadata:
+      labels:
+        app: privideo-backend
+    spec:
+      nodeSelector:
         argocd-node: "true"            
       tolerations:
         - key: "dedicated"
           operator: "Equal"
           value: "cicd"
           effect: "NoSchedule"
-    metadata:
-      labels:
-        app: privideo-backend
-    spec:
+  
       volumes:
         - name: gemini-secret
           secret:
