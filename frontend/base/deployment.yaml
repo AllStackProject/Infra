@@ -13,14 +13,7 @@ spec:
       labels:
         app: privideo-frontend
     spec:
-      nodeSelector:
-        argocd-node: "true"  # 같은 노드에 배포하려면
-      tolerations:
-        - key: "dedicated"
-          operator: "Equal"
-          value: "cicd"
-          effect: "NoSchedule"
-      
+    
       containers:
         - name: frontend
           image: docker.io/dockdock150/frontend:latest 
