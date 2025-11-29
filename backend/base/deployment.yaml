@@ -14,14 +14,6 @@ spec:
       labels:
         app: privideo-backend
     spec:
-      nodeSelector:
-        argocd-node: "true"            
-      tolerations:
-        - key: "dedicated"
-          operator: "Equal"
-          value: "cicd"
-          effect: "NoSchedule"
-  
       volumes:
         - name: gemini-secret
           secret:
