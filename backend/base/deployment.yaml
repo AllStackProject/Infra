@@ -28,6 +28,8 @@ spec:
           envFrom:
             - configMapRef:
                 name: myapp-config
+            - configMapRef:
+                name: gemini-config
             - secretRef:
                 name: myapp-secret
 
