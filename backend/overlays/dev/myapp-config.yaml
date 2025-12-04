@@ -32,7 +32,7 @@ data:
   GEMINI_MODEL_NAME: "gemini-2.0-flash"
 
   RTZR_BASE_URL: "https://openapi.vito.ai"
-  RTZR_CLIENT_ID: "bSV7tYg1y9B5QISrUKJ3"
+  RTZR_CLIENT_ID: "kkazk5AQlzwlb1dFjVbu"
   
   TOKEN_EXPIRED_IN: "2592000"
 
