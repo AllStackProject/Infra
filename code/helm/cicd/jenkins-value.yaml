@@ -1,0 +1,22 @@
+controller:
+  serviceType: NodePort
+  servicePort: 80
+  targetPort: 8080
+  nodePort: 30121
+
+  nodeSelector:
+    jenkins-node: "true"
+  tolerations:
+    - key: "dedicated"
+      operator: "Equal"
+      value: "cicd"
+      effect: "NoSchedule"
+
+  controller:
+    adminUser: admin
+    adminPassword: "VMware1!"
+
+persistence:
+  enabled: true
+  existingClaim: pvc-hdd-jenkins
+  mountPath: /var/jenkins_home
