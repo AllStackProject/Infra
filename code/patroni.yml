@@ -1,0 +1,52 @@
+restapi:
+  listen: 0.0.0.0:8008
+
+connect_address: 172.16.2.111:8008
+
+etcd3:
+  hosts:
+    - 172.16.2.111:2379
+    - 172.16.2.112:2379
+    - 172.16.2.113:2379
+
+bootstrap:
+  dcs:
+    ttl: 30
+    loop_wait: 10
+    retry_timeout: 10
+    maximum_lag_on_failover: 1048576
+    postgresql:
+      use_pg_rewind: true
+      use_slots: true
+      parameters:
+        max_wal_senders: 10
+        max_replication_slots: 10
+  initdb:
+    - encoding: UTF8
+    - data-checksums
+  pg_hba:
+    - host replication replicator 0.0.0.0/0 md5
+    - host all all 0.0.0.0/0 md5
+
+postgresql:
+  listen: 0.0.0.0:5432
+
+  connect_address: 172.16.2.111:5432
+  data_dir: /var/lib/postgresql/data/data_disk
+  bin_dir: /usr/lib/postgresql/16/bin
+  pg_hba:
+    - host replication replicator 0.0.0.0/0 md5
+    - host all all 0.0.0.0/0 md5
+
+  authentication:
+    replication:
+      username: replicator
+      password: ''
+    superuser:
+      username: postgres
+      password: ''
+
+watchdog:
+  mode: automatic
+  device: /dev/watchdog
+  safety_margin: 5
